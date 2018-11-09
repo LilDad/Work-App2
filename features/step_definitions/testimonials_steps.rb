@@ -6,6 +6,7 @@ require 'watir-scroll'
 Given(/^I open a browser$/) do
   @browser = Watir::Browser.new :firefox
   @browser.goto 'http://www.articlerewriteservice.net/testimonials/'
+  @browser.wait_until_present(timeout: 300)
 end
 
 When(/^I fill the fields with information "([^"]*)" and "([^"]*)"$/) do |data, email|
