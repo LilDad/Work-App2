@@ -12,7 +12,7 @@ When(/^the search for "([^"]*)"$/) do |arg|
   @browser.send_keys :return
 end
 
-Then(/^Amazon should return result for "([^"]*)"$/) do |arg|
+Then(/^Amazon should return result for "([^"]*)"$/) do |_arg|
   @browser.div(id: 'result_2').wait_until_present
   # page_output = @browser.div(id: 'resultCol').text.include? arg
   # assertion

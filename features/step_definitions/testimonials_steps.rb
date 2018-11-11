@@ -4,8 +4,12 @@ require 'selenium-webdriver'
 require 'watir-scroll'
 
 Given(/^I open a browser$/) do
-  @browser = Watir::Browser.new :firefox
+  # @client = Selenium::WebDriver::Remote::Http::Default.new
+  # @client.timeout = 300 #seconds
+  # @browser = Watir::Browser.new :firefox, :http_client => @client
+  @browser = Watir::Browser.new :chrome
   @browser.goto 'http://www.articlerewriteservice.net/testimonials/'
+  sleep(150)
 end
 
 When(/^I fill the fields with information "([^"]*)" and "([^"]*)"$/) do |data, email|
@@ -17,7 +21,7 @@ When(/^I fill the fields with information "([^"]*)" and "([^"]*)"$/) do |data, e
   @browser.textarea(id: 'inputMessage').set data
   @browser.scroll.to([0, 300])
   @browser.checkbox(id: 'testimonials_checkbox').set
-  @browser.button(class: 'testimonial_btn').click
+  # @browser.button(class: 'testimonial_btn').click
 end
 
 Then (/^I send fill form$/) do
