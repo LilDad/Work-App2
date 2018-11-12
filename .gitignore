@@ -6,3 +6,8 @@
 features/step_definitions/amazon_search_steps\.rb
 
 Gemfile
+
+
+\.idea/
+
+Screenshots/
