@@ -1,7 +1,7 @@
 require 'watir'
 require 'cucumber'
 require 'selenium-webdriver'
-require 'watir-scroll'
+# require 'watir-scroll'
 
 Given(/^I open a browser$/) do
   # @client = Selenium::WebDriver::Remote::Http::Default.new
